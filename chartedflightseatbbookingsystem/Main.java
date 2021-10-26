@@ -18,13 +18,13 @@ public class Main {
          demo.login();
      }
      public void login(){ 
-            Details demo = new Details(); 
+            CustomerDetails demo = new CustomerDetails(); 
             int h = 0;
             while (h == 0) {
                 System.out.println();
-                System.out.println("=================================");
+                System.out.println("========================");
                 System.out.println("| 1-Admin | 2-Customer |");
-                System.out.println("=================================");
+                System.out.println("========================");
                 System.out.println();
                 Scanner input = new Scanner(System.in);
                 System.out.print("SELECT\t: ");
@@ -45,9 +45,14 @@ public class Main {
                         System.out.println();
                         if (select2==1){
                             demo.logInCustomer();
+                            Bookings demo1 = new Bookings(); 
+                            demo1.destinations();
                             break;
                         }else if (select2==2){
                             demo.signUpCustomer();
+                            demo.logInCustomer();
+                            Bookings demo1 = new Bookings(); 
+                            demo1.destinations();
                             break;
                         }else{
                             System.out.println("!! INCORRECT VALUE !!");

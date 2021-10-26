@@ -58,27 +58,22 @@ public class CustomerDetails {
                 System.out.println("================");
                 System.out.println();
                 System.out.print("FIRST NAME\t: ");
-                firstName.add(input.next());
+                firstName.add(input.nextLine());
                 System.out.print("LAST NAME\t: ");
-                lastName.add(input.next());
+                lastName.add(input.nextLine());
                 System.out.print("ADDRESS\t: ");
-                address.add(input.next());
+                address.add(input.nextLine());
                 System.out.print("PHONE NUMBER\t: ");
-                phone.add(input.next());
+                phone.add(input.nextLine());
                 System.out.print("E-MAIL\t: ");
-                email.add(input.next());
+                email.add(input.nextLine());
                 System.out.print("USER NAME\t: ");
-                userName.add(input.next());
+                userName.add(input.nextLine());
                 System.out.print("PASSWORD\t: ");
-                password.add(input.next());
+                password.add(input.nextLine());
                 System.out.println();
                 System.out.println("$$ YOUR ACCOUNT WAS SUCCESSFULLY CREATED $$");
                 System.out.println();
-                System.out.println("LIST ELEMENTS: "+userName);
-                System.out.println("LIST ELEMENTS: "+password);
-                System.out.println("LIST ELEMENTS: "+firstName+" "+lastName);
-                System.out.println("LIST ELEMENTS: "+address);
-                System.out.println("LIST ELEMENTS: "+email);
     }
     public void logInCustomer(){ 
                 Scanner input = new Scanner(System.in);                   

@@ -5,6 +5,8 @@
  */
 package chartedflightseatbbookingsystem;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 /**
@@ -20,8 +22,9 @@ public class Bookings {
     
   public String[][] destinations = new String[8][4];
   public String[] time = new String[5];  
-
-        
+  
+  public Queue<String> passangerDetails = new LinkedList<>();
+  public Queue<String> confirmedNoPassangerDetails = new LinkedList<>();    
 
     public void destinations(){  
         flightNo[0]=1001;
@@ -85,9 +88,9 @@ public class Bookings {
         int h = 1;
         while (h == 1) {
             System.out.println();
-            System.out.println("==============================================");
-            System.out.println("| 1-Flight Destinations | 2-Booking Details |");
-            System.out.println("==============================================");
+            System.out.println("========================================================");
+            System.out.println("| 1-Flight Destinations | 2-Booking Details | 3-Profile  |");
+            System.out.println("========================================================");
             System.out.println();
             Scanner input = new Scanner(System.in);
             System.out.print("SELECT\t: ");
@@ -117,24 +120,55 @@ public class Bookings {
                     System.out.println();
                     System.out.println("CHOOSE YOUR AVAILABILITY");
                     System.out.println();
-                    Scanner input2 = new Scanner(System.in);
                     System.out.print("SELECT\t: ");
                     int select3 = input.nextInt();
                     System.out.println(); 
                     System.out.println("     - YOU HAVE SELECTED YOUR DESTINATION AS ' "+destinations[select2-1][select3-1]+" ' -   ");
                     System.out.println();
                     System.out.println("HOW MANY SEATS YOU NEED TO BOOK? ");
-                    Scanner input3 = new Scanner(System.in);
                     System.out.print("SEAT COUNT\t: ");
                     int seatCount = input.nextInt();
                     System.out.println();
                     System.out.println("     - ENTER PASSANGER DETAILS -     ");
                     System.out.println();
+                    for(int j=0; j<seatCount; j++){
+                        System.out.println();
+                        System.out.println("PASSENGER "+(j+1)+" DETAILS");
+                        System.out.println();
+                        System.out.print("NAME\t: ");
+                        String name=input.next();
+                        System.out.print("ADDRESS\t: ");
+                        String address=input.next();
+                        System.out.print("PHONE NUMBER\t: ");
+                        String phone=input.next();
+                        passangerDetails.add("1000"+j+name+address+phone);
+                        System.out.println();
+                    }
+                    
+                    System.out.println(" Your confirmation details !!");
+                    for(int j=0; j<seatCount; j++){
+                        System.out.println();
+                        System.out.println("PASSENGER "+(j+1)+" ARE YOU OK TO GO WITH THIS FLIGHT?");
+                        System.out.println();
+                        System.out.print("CONFIRM YES|NO\t: ");
+                        String confirm=input.next();
+                        System.out.println();
+                        if(confirm=="YES"){
+                            
+                        }else{
+
+                        }
+                    }
                     
             }else if (select==2){
                 System.out.println();
                 System.out.println("!! NOW YOU DON'T HAVE ANY BOOKING HISTORY !!");
                 System.out.println();
+
+            }else if (select==2){
+                System.out.println();
+                System.out.println("!! NOW YOU DON'T HAVE ANY BOOKING HISTORY !!");
+                    System.out.println();
 
             }else{
                 h = 1;
@@ -144,10 +178,6 @@ public class Bookings {
         }   
         
     }
-    
-    public static void main(String[] args) {
-        Bookings demo = new Bookings(); 
-        demo.destinations();
-    }
+   
     
 }
